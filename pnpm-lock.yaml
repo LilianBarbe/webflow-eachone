@@ -8,6 +8,24 @@ dependencies:
   '@finsweet/ts-utils':
     specifier: ^0.40.0
     version: 0.40.0
+  '@tarekraafat/autocomplete.js':
+    specifier: ^10.2.7
+    version: 10.2.7
+  gsap:
+    specifier: ^3.12.4
+    version: npm.greensock.com/@gsap/shockingly@3.12.4
+  jquery:
+    specifier: ^3.7.1
+    version: 3.7.1
+  jquery-validation:
+    specifier: ^1.20.0
+    version: 1.20.0(jquery@3.7.1)
+  just-validate:
+    specifier: ^4.3.0
+    version: 4.3.0
+  swiper:
+    specifier: ^11.0.5
+    version: 11.0.5
 
 devDependencies:
   '@changesets/changelog-git':
@@ -625,6 +643,10 @@ packages:
     dependencies:
       playwright: 1.39.0
     dev: true
+
+  /@tarekraafat/autocomplete.js@10.2.7:
+    resolution: {integrity: sha512-iE+dnXI8/LrTaSORrnNdSyXg/bFCbCpz/R5GUdB3ioW+9PVEhglxNcSDQNeCXtrbRG0kOBFUd4unEiwcmqyn8A==}
+    dev: false
 
   /@types/is-ci@3.0.4:
     resolution: {integrity: sha512-AkCYCmwlXeuH89DagDCzvCAyltI2v9lh3U3DqSg/GrBYoReAaWwxfXCqMx9UV5MajLZ4ZFwZzV4cABGIxk2XRw==}
@@ -2036,6 +2058,18 @@ packages:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
+  /jquery-validation@1.20.0(jquery@3.7.1):
+    resolution: {integrity: sha512-c8tg4ltIIP6L7l0bZ79sRzOJYquyjS48kQZ6iv8MJ2r0OYztxtkWYKTReZyU2/zVFYiINB29i0Z/IRNNuJQN1g==}
+    peerDependencies:
+      jquery: ^1.7 || ^2.0 || ^3.1
+    dependencies:
+      jquery: 3.7.1
+    dev: false
+
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: true
@@ -2076,6 +2110,10 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.11
     dev: true
+
+  /just-validate@4.3.0:
+    resolution: {integrity: sha512-9yS7ZnFk95vq+O7CAa7XZEJvZN5i6jTQWNhLwOjtgkSqiLxo7GZJhK8ViylP76fXPfHLs8tYWqi81XgxPF3OGA==}
+    dev: false
 
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -2852,6 +2890,11 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /swiper@11.0.5:
+    resolution: {integrity: sha512-rhCwupqSyRnWrtNzWzemnBLMoyYuoDgGgspAm/8iBD3jCvAWycPLH4Z3TB0O5520DHLzMx94yUMH/B9Efpa48w==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
+
   /synckit@0.8.5:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -3163,3 +3206,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  npm.greensock.com/@gsap/shockingly@3.12.4:
+    resolution: {integrity: sha512-3SXz2Ziu1uWY1XgZcUOmLpvq5NZ7b748A0lQtZ7f9detWLL7+IZrsdxAiZw5Q5i1twfvOeLsaK5N+r3B8QRlVw==, tarball: https://npm.greensock.com/@gsap/shockingly/-/shockingly-3.12.4.tgz}
+    name: gsap
+    version: 3.12.4
+    dev: false
