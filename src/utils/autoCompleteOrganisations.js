@@ -22,7 +22,7 @@ export const setupAutoComplete = function () {
             // Add class to the created element
             message.setAttribute("class", "no_result");
             // Add message text content
-            message.innerHTML = `<span>Found No Results for "${data.query}"</span>`;
+            message.innerHTML = `<span>Aucun résultat trouvé pour "${data.query}"</span>`;
             // Append message element to the results list
             list.prepend(message);
           }

@@ -92,7 +92,7 @@ export function setupForms() {
     function (value, element) {
       return (
         this.optional(element) ||
-        /^\s*\+?((\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm.test(
+        /^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm.test(
           value
         )
       );
@@ -141,6 +141,16 @@ export function setupForms() {
     const btnSubmitMirror = section.querySelector("[data-submit-mirror]");
 
     var validator = $(`#${formID}`).validate({
+      errorPlacement: function (error, element) {
+        // si l'élément est de type radio
+        if (element.attr("type") === "radio") {
+          // place l'erreur dans le dernier enfant du .form-question-wrapper
+          error.appendTo(element.closest(".form-question-wrapper"));
+        } else {
+          // sinon, laissez le comportement par défaut.
+          error.insertAfter(element);
+        }
+      },
       rules: {
         application_form_mail_address: {
           required: true,
