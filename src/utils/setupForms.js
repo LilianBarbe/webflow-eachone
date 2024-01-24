@@ -152,27 +152,27 @@ export function setupForms() {
         }
       },
       rules: {
-        application_form_mail_address: {
+        application_mail_address: {
           required: true,
           customEmail: true,
         },
         select: {
           required: true,
         },
-        application_form_habitation_postcode: {
+        application_habitation_postcode: {
           required: true,
           customPostalCode: true,
           maxlength: 5,
         },
-        application_form_birth_date: {
+        application_birth_date: {
           customDate: true,
           maxlength: 10,
         },
-        application_form_whatsapp_phone_number: {
+        application_whatsapp_phone_number: {
           required: true,
           customPhoneNumberWhatsApp: true,
         },
-        application_form_phone_number: {
+        application_phone_number: {
           required: true,
           customPhoneNumber: true,
           minlength: 10,
