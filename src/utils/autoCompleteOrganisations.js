@@ -1,3 +1,5 @@
+import "node_modules/@tarekraafat/autocomplete.js/dist/css/autoComplete.03.css";
+
 import autoComplete from "@tarekraafat/autocomplete.js";
 import { dataPrescribers } from "src/data/prescribersArr.js";
 
@@ -10,37 +12,47 @@ export const setupAutoComplete = function () {
       placeHolder: "Chercher un organisme...",
       data: {
         src: dataPrescribers,
-        keys: ["Name", "recordID"],
+        keys: ["Name"],
         cache: true,
       },
-
-      resultsList: {
-        element: (list, data) => {
-          if (!data.results.length) {
-            // Create "No Results" message element
-            const message = document.createElement("div");
-            // Add class to the created element
-            message.setAttribute("class", "no_result");
-            // Add message text content
-            message.innerHTML = `<span>Aucun résultat trouvé pour "${data.query}"</span>`;
-            // Append message element to the results list
-            list.prepend(message);
-          }
-        },
-        noResults: true,
-      },
+      threshold: 1,
       resultItem: {
         highlight: true,
         tag: "li",
         class: "autoComplete_result",
       },
+
+      resultsList: {
+        element: (list, data) => {
+          if (!data.results.length) {
+            const message = document.createElement("li");
+            message.setAttribute("class", "autoComplete_result");
+            let errorMsg = "Je ne trouve pas ou n'ai pas d'organisation";
+            message.innerHTML = `<span>${errorMsg}</span>`;
+            list.prepend(message);
+            message.addEventListener("click", () => {
+              list.style.display = "none"; // Fix: Set the display property to "none" for the message element
+              const selection = { value: { Name: errorMsg } };
+              autoCompleteJS.input.value = selection.value.Name;
+              const recordIDInput = document.querySelectorAll("input[data-prescribing='id']");
+              recordIDInput.value = "";
+              recordIDInput.forEach(function (input) {
+                input.value = recordIDInput.value;
+              });
+            });
+          }
+        },
+        noResults: true,
+      },
       events: {
         input: {
           selection: (event) => {
             const selection = event.detail.selection.value.Name;
-            const recordIDInput = document.querySelectorAll("input[data-prescribing='id']");
             autoCompleteJS.input.value = selection;
+            const recordIDInput = document.querySelectorAll("input[data-prescribing='id']");
             recordIDInput.value = event.detail.selection.value.recordID;
+            // const simulatedEvent = new Event("input", { bubbles: true });
+            // autoCompleteJS.input.dispatchEvent(simulatedEvent);
             recordIDInput.forEach(function (input) {
               input.value = recordIDInput.value;
             });

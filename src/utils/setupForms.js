@@ -21,6 +21,8 @@ function paramsHas(param) {
   return currentURL.searchParams.has(param);
 }
 
+const prescribingOrNot = paramsHas("prescribing_organisation");
+
 //// setup le form
 export function setupForms() {
   paramsSearch();
@@ -139,6 +141,7 @@ export function setupForms() {
     const btnStep2 = form.querySelector(".msf-button.is-submit");
     const btnSubmit = form.querySelector("[submit-btn]");
     const btnSubmitMirror = section.querySelector("[data-submit-mirror]");
+    const textStep = form.querySelectorAll(".text-step");
 
     var validator = $(`#${formID}`).validate({
       errorPlacement: function (error, element) {
@@ -178,6 +181,9 @@ export function setupForms() {
           minlength: 10,
           maxlength: 10,
         },
+        prescribing_name: {
+          required: !prescribingOrNot,
+        },
       },
     });
 
@@ -203,6 +209,11 @@ export function setupForms() {
       step2.classList.remove("display-none");
       btnStep1.classList.add("display-none");
       btnStep2.classList.remove("display-none");
+      if (textStep) {
+        textStep.forEach(function (text) {
+          text.textContent = "Étape 2/2";
+        });
+      }
     };
 
     // step 1
