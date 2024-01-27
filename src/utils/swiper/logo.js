@@ -1,18 +1,20 @@
-import "swiper/css";
+// import Swiper bundle with all modules installed
+// import styles bundle
+import "swiper/css/bundle";
 
-import Swiper from "swiper";
+import Swiper from "swiper/bundle";
 
-export const sliderComponents = document.querySelectorAll(".slider-logo_component");
-sliderComponents.forEach((component) => {
-  const swiperLogo = new Swiper(component.querySelector(".swiper.is-logo"), {
-    autoplay: true,
-    speed: 1800,
-    delay: 1000,
-    loop: true,
-    breakpoints: {
-      240: { slidesPerView: 3, spaceBetween: "0%" },
-      480: { slidesPerView: 3, spaceBetween: "2%" },
-      992: { slidesPerView: 5, spaceBetween: 40 },
-    },
+export const stepUpSwiperLogo = function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiperComponent = document.querySelectorAll("[swiper-component]");
+    swiperComponent.forEach((component) => {
+      let swiper = new Swiper(component.querySelector(".swiper"), {
+        speed: 400,
+        spaceBetween: 0,
+        slidesPerView: 5, // Set the number of slides per view to 5
+      });
+      // Initialiser le swiper
+      swiper.init();
+    });
   });
-});
+};

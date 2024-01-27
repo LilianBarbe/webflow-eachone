@@ -7,7 +7,6 @@ import { setupVideoSwiper } from "$utils/swiper/video.js";
 setupVideoSwiper();
 setupForms();
 redirectLinks();
-//
 
 // const
 const sectionStep1and2 = document.querySelector('[section="lead-aio"]');
@@ -19,7 +18,6 @@ const checkIfQueryParamExists = function (queryParam) {
   const currentURL = new URL(window.location.href);
   return currentURL.searchParams.has(queryParam);
 };
-
 //
 function displayAppropriateSection() {
   sectionStep1and2.style.display = "none";

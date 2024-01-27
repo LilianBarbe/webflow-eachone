@@ -11,7 +11,9 @@ class ParamsToSearch {
     const input = document.querySelectorAll<HTMLInputElement>(`[${this.inputAttr}]`);
     const val = this.currentURL.searchParams.get(this.name);
     input.forEach((i) => {
-      if (val) i.value = val;
+      if (val) {
+        i.value = val;
+      }
     });
   }
 }

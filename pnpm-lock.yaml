@@ -20,9 +20,6 @@ dependencies:
   jquery-validation:
     specifier: ^1.20.0
     version: 1.20.0(jquery@3.7.1)
-  just-validate:
-    specifier: ^4.3.0
-    version: 4.3.0
   swiper:
     specifier: ^11.0.5
     version: 11.0.5
@@ -2110,10 +2107,6 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.11
     dev: true
-
-  /just-validate@4.3.0:
-    resolution: {integrity: sha512-9yS7ZnFk95vq+O7CAa7XZEJvZN5i6jTQWNhLwOjtgkSqiLxo7GZJhK8ViylP76fXPfHLs8tYWqi81XgxPF3OGA==}
-    dev: false
 
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}

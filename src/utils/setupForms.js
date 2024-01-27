@@ -35,7 +35,7 @@ export function setupForms() {
     });
     prescribingInputs.forEach(function (input) {
       input.rules("add", {
-        required: true,
+        required: false,
       });
     });
   } else {

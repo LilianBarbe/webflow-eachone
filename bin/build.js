@@ -12,6 +12,8 @@ const ENTRY_POINTS = [
   "src/general/index.js",
   "src/page/job-board/candidats/index.js",
   "src/page/opportunity/index.js",
+  "src/form-test/swiper-logo.js",
+  "src/page/job-board/society/index.js",
 ];
 
 // Config dev serving
