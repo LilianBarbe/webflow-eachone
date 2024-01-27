@@ -175,9 +175,6 @@ export function setupForms() {
           minlength: 10,
           maxlength: 10,
         },
-        prescribing_name: {
-          required: !prescribingOrNot,
-        },
       },
     });
 
