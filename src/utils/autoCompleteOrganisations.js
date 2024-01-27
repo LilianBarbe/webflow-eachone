@@ -1,4 +1,4 @@
-import "node_modules/@tarekraafat/autocomplete.js/dist/css/autoComplete.03.css";
+import "node_modules/@tarekraafat/autocomplete.js/dist/css/autoComplete.02.css";
 
 import autoComplete from "@tarekraafat/autocomplete.js";
 import { dataPrescribers } from "src/data/prescribersArr.js";

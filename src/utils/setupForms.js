@@ -12,7 +12,6 @@ setupAutoComplete();
 // const & let
 const sectionForm = document.querySelectorAll("[form-component]");
 const prescribingWraps = document.querySelectorAll("[prescribing-wrap]");
-const prescribingInputs = document.querySelectorAll("input[prescribing-wrap]");
 
 // functions
 //// verifier les params
