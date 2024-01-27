@@ -60,9 +60,7 @@ submitBtn.each(function (index) {
   $(this).on("click", function () {
     console.log("click");
     let form = $(this).closest("form");
-    let inputApplicationMailAdress = $(form).find(
-      "input[name='application_mail_adress']"
-    );
+    let inputApplicationMailAdress = $(form).find("input[name='application_mail_adress']");
     // let valEmail = inputApplicationMailAdress.val();
     if (form.valid() === true) {
       form.submit();

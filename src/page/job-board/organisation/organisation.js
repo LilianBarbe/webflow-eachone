@@ -42,12 +42,8 @@ let valContactCreationChannel = inputContactCreationChannel.val();
 //
 //
 // PRESCRIBING
-let inputAppPrescribingOrga = $(
-  '[champ="application_prescribing_organisation"]'
-);
-const paramPrescribing = $(
-  '[champ="application_prescribing_organisation"]'
-).attr("name");
+let inputAppPrescribingOrga = $('[champ="application_prescribing_organisation"]');
+const paramPrescribing = $('[champ="application_prescribing_organisation"]').attr("name");
 
 let valPrescribing = params.get(paramPrescribing);
 inputAppPrescribingOrga.val(valPrescribing);

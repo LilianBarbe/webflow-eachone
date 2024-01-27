@@ -1,12 +1,8 @@
 console.log("viviers");
 
 function setupRadioButtons(groupName) {
-  let radioInputs = document.querySelectorAll(
-    `input[type=radio][lb-choice-form='${groupName}']`
-  );
-  let responseDiv = document.querySelector(
-    `div[lb-choice-form='${groupName}']`
-  );
+  let radioInputs = document.querySelectorAll(`input[type=radio][lb-choice-form='${groupName}']`);
+  let responseDiv = document.querySelector(`div[lb-choice-form='${groupName}']`);
 
   radioInputs.forEach(function (radio) {
     radio.addEventListener("change", function () {
@@ -30,27 +26,19 @@ const currentParams = new URLSearchParams(window.location.search); // Paramètre
 
 const searchPrescribing = () => {
   if (currentParams.has("application_prescribing_organisation")) {
-    const prescribingVal = currentParams.get(
-      "application_prescribing_organisation"
-    );
+    const prescribingVal = currentParams.get("application_prescribing_organisation");
     const inputElement = document.querySelector(
       'input[application_prescribing_organisation="msf"]'
     );
     const inputWrap = document.querySelector("div[data-hidden-prescribing]");
-    console.log(
-      `la valeur de application_prescribing_organisation est ${prescribingVal}`
-    );
+    console.log(`la valeur de application_prescribing_organisation est ${prescribingVal}`);
 
     inputElement.value = prescribingVal;
     inputWrap.classList.add("hidden");
-    document.querySelector("input[lb-prescribing-mirror]").value =
-      prescribingVal;
+    document.querySelector("input[lb-prescribing-mirror]").value = prescribingVal;
   } else {
-    console.log(
-      "Élément input pour application_prescribing_organisation non trouvé."
-    );
-    document.querySelector("input[lb-prescribing-mirror]").value =
-      "Non renseigné";
+    console.log("Élément input pour application_prescribing_organisation non trouvé.");
+    document.querySelector("input[lb-prescribing-mirror]").value = "Non renseigné";
     setupRadioButtons("organisation");
     setTimeout(function () {
       // A mettre sous une certaine condition
@@ -87,21 +75,17 @@ const searchCampaign = () => {
     campInput.forEach(function (camp) {
       camp.value = campaignVal;
     });
-    document
-      .querySelectorAll('input[lb-mirror-target="campagne"]')
-      .forEach((input) => {
-        input.value = campaignVal;
-      });
+    document.querySelectorAll('input[lb-mirror-target="campagne"]').forEach((input) => {
+      input.value = campaignVal;
+    });
   } else {
     campaignVal = "rec16RmAqTs4deUnW";
     campInput.forEach(function (camp) {
       camp.value = campaignVal;
     });
-    document
-      .querySelectorAll('input[lb-mirror-target="campagne"]')
-      .forEach((input) => {
-        input.value = campaignVal;
-      });
+    document.querySelectorAll('input[lb-mirror-target="campagne"]').forEach((input) => {
+      input.value = campaignVal;
+    });
   }
 };
 
@@ -171,10 +155,7 @@ $(document).ready(function () {
 //// URL de test : https://eachone-escadrille.webflow.io/nos-offres-en-cours?prescribing_organisation=recordID&acquisition_campaign=campagne
 
 // Liste des paramètres à surveiller
-var paramsToKeep = [
-  "application_prescribing_organisation",
-  "acquisition_campaign",
-];
+var paramsToKeep = ["application_prescribing_organisation", "acquisition_campaign"];
 
 // Fonction pour ajouter des paramètres à une URL
 function addParamsToUrl(url) {

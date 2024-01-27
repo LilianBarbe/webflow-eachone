@@ -33,11 +33,6 @@ export function setupForms() {
     prescribingWraps.forEach(function (precribingWrap) {
       precribingWrap.style.display = "block";
     });
-    prescribingInputs.forEach(function (input) {
-      input.rules("add", {
-        required: false,
-      });
-    });
   } else {
     prescribingWraps.forEach(function (precribingWrap) {
       precribingWrap.style.display = "none";

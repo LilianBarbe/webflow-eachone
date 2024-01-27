@@ -87,15 +87,11 @@ function handleAdmin() {
   const educationLevelFinal = $('[msf="education-level"]');
   const thankYouPage = params.has("society")
     ? encodeURI(`https://${location.host}/programmes-society-thank-you-page`)
-    : encodeURI(
-        `https://${location.host}/programmes-all-in-one-thank-you-page`
-      );
+    : encodeURI(`https://${location.host}/programmes-all-in-one-thank-you-page`);
 
   $("form").on("submit", function () {
     setTimeout(redirect, 1500);
-    educationLevelFinal.val(
-      educationLevelNormal.val() + educationLevelSociety.val()
-    );
+    educationLevelFinal.val(educationLevelNormal.val() + educationLevelSociety.val());
     setTimeout(redirect, 1500);
   });
 }
