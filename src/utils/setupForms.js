@@ -182,9 +182,11 @@ export function setupForms() {
     const verifyInputs = function (inputs) {
       let allValid = true;
       inputs.forEach(function (input) {
-        let result = validator.element(input);
-        if (!result) {
-          allValid = false;
+        if (input.hasAttribute("required")) {
+          let result = validator.element(input);
+          if (!result) {
+            allValid = false;
+          }
         }
       });
       return allValid;
