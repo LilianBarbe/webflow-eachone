@@ -20,15 +20,13 @@ function paramsHas(param) {
   return currentURL.searchParams.has(param);
 }
 
-const prescribingOrNot = paramsHas("prescribing_organisation");
-
 //// setup le form
 export function setupForms() {
   paramsSearch();
   showHiddenInputs(false);
 
   // modifier la question prescribing
-  if (!paramsHas("prescribing_organisation")) {
+  if (!paramsHas("application_prescribing_organisation")) {
     prescribingWraps.forEach(function (precribingWrap) {
       precribingWrap.style.display = "block";
     });
