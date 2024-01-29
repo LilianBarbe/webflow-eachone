@@ -20,7 +20,7 @@ class ParamsToSearch {
 
 const paramsToSearchArr = [
   new ParamsToSearch("application_mail_address", "data-email"),
-  new ParamsToSearch("prescribing_organisation", "data-orga"),
+  new ParamsToSearch("application_prescribing_organisation", "data-orga"),
   new ParamsToSearch("acquisition_campaign", "data-campaign"),
 ];
 
