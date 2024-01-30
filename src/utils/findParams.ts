@@ -21,7 +21,7 @@ class ParamsToSearch {
 const paramsToSearchArr = [
   new ParamsToSearch("application_mail_address", "data-email"),
   new ParamsToSearch("application_prescribing_organisation", "data-orga"),
-  new ParamsToSearch("acquisition_campaign", "data-campaign"),
+  new ParamsToSearch("application_acquisition_campaign", "data-campaign"),
 ];
 
 export const paramsSearch = function () {
