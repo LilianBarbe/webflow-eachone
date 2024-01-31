@@ -4,6 +4,7 @@ import autoComplete from "@tarekraafat/autocomplete.js";
 import { dataPrescribers } from "src/data/prescribersArr.js";
 
 const selectors = document.querySelectorAll("input[autocomplete]");
+
 export const setupAutoComplete = function () {
   selectors.forEach(function (selector) {
     const selectorID = "#" + selector.id;
