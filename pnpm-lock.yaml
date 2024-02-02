@@ -11,6 +11,9 @@ dependencies:
   '@tarekraafat/autocomplete.js':
     specifier: ^10.2.7
     version: 10.2.7
+  codes-postaux:
+    specifier: ^4.0.0
+    version: 4.0.0
   gsap:
     specifier: ^3.12.4
     version: npm.greensock.com/@gsap/shockingly@3.12.4
@@ -1032,6 +1035,13 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
     dev: true
+
+  /codes-postaux@4.0.0:
+    resolution: {integrity: sha512-TolXXq86dMTrsAHzjVbJ/sPZCvN2TUxneV8UJ+50cErgH1zq4j86wKjIetPqLvHCtkLbf+H8Xqy7j6n9+MllUA==}
+    engines: {node: '>= 12'}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
 
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -2167,6 +2177,10 @@ packages:
   /lodash.startcase@4.4.0:
     resolution: {integrity: sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==}
     dev: true
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /lru-cache@4.1.5:
     resolution: {integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==}
