@@ -1,6 +1,8 @@
 import "node_modules/@tarekraafat/autocomplete.js/dist/css/autoComplete.02.css";
+import "intl-tel-input/build/css/intlTelInput.css";
 
 import autoComplete from "@tarekraafat/autocomplete.js";
+import intlTelInput from "intl-tel-input";
 
 // const select = document.querySelector("select[number]");
 // const setPays = async function () {
@@ -52,4 +54,10 @@ const autoCompleteJS = new autoComplete({
       },
     },
   },
+});
+
+// VALIDATION
+const input = document.querySelector("#phone");
+intlTelInput(input, {
+  utilsScript: "../intl-tel-input/build/js/utils.js",
 });
