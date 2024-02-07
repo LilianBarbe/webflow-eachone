@@ -38,9 +38,9 @@ function paramsHas(param) {
 
 // modifier la question prescribing
 if (paramsHas("application_mail_address")) {
-  document.querySelector('input[name="contact_mail_address"]').value = currentURL.searchParams.get(
-    "application_mail_address"
-  );
+  document.querySelectorAll('input[name="contact_mail_address"]').forEach(function (mail) {
+    mail.value = currentURL.searchParams.get("application_mail_address");
+  });
 } else {
   //
 }
