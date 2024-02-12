@@ -37,9 +37,9 @@ function paramsHas(param) {
 }
 
 // modifier la question prescribing
-if (paramsHas("application_mail_address")) {
+if (paramsHas("contact_mail_address")) {
   document.querySelectorAll('input[name="contact_mail_address"]').forEach(function (mail) {
-    mail.value = currentURL.searchParams.get("application_mail_address");
+    mail.value = currentURL.searchParams.get("contact_mail_address");
   });
 } else {
   //
