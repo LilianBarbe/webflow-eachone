@@ -1,63 +1,17 @@
 import "node_modules/@tarekraafat/autocomplete.js/dist/css/autoComplete.02.css";
-import "intl-tel-input/build/css/intlTelInput.css";
 
 import autoComplete from "@tarekraafat/autocomplete.js";
-import intlTelInput from "intl-tel-input";
 
-// const select = document.querySelector("select[number]");
-// const setPays = async function () {
-//   const response = await fetch("https://restcountries.com/v3.1/all");
-//   const data = await response.json();
-//   await data.forEach((pays) => {
-//     const e = document.createElement("option");
-//     e.value = `name : ${pays.name.common}`;
-//     e.text = `${pays.name.common}`;
-//     // select.appendChild(e);
-//   });
-// };
+import { getAdress } from "$test/getAdressApi.js";
 
-// setPays();
+const auto = document.getElementById("autoComplete");
+let adress;
 
-const autoCompleteJS = new autoComplete({
-  placeHolder: "Chercher une ville",
-  data: {
-    src: async (query) => {
-      try {
-        const source = await fetch(`https://vicopo.selfbuild.fr/cherche/${query}`);
-        const data = await source.json();
-        // Flatten the cities array to be directly usable by the autocomplete.
-        return data.cities;
-      } catch (error) {
-        return error;
-      }
-    },
-    keys: ["city", "code"],
-  },
-  resultItem: {
-    highlight: true,
-    element: (item, data) => {
-      item.style = "display: flex; justify-content: space-between;";
-      item.innerHTML = `
-      <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-        ${data.value.city}
-      </span>
-      <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; text-transform: uppercase; color: rgba(0,0,0,.3);">
-        ${data.value.code}
-      </span>`;
-    },
-  },
-  events: {
-    input: {
-      selection: (event) => {
-        const selection = event.detail.selection.value;
-        autoCompleteJS.input.value = `${selection.city} (${selection.code})`;
-      },
-    },
-  },
-});
+document.querySelector(".adress_list").style.display = "none";
 
-// VALIDATION
-const input = document.querySelector("#phone");
-intlTelInput(input, {
-  utilsScript: "../intl-tel-input/build/js/utils.js",
+// à l'input, renvoie un array de propositions
+auto.addEventListener("input", function () {
+  adress = auto.value;
+  getAdress(adress);
+  document.querySelector(".adress_list").style.display = "flex";
 });
