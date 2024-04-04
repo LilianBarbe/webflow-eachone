@@ -1,8 +1,10 @@
 // import
 // import { paramsAdd } from "$utils/addParams.ts";
+// import de l'API Ville du gouv
 import { setupAutoComplete } from "$utils/autoCompleteOrganisations.js";
 import { paramsSearch } from "$utils/findParams.ts";
 import { inputsMirror } from "$utils/inputsMirror.js";
+import { searchCity } from "$utils/search-city/displayAddress.js";
 import { showHiddenInputs } from "$utils/showHiddenFields.ts";
 
 // constuct
@@ -135,6 +137,8 @@ export function setupForms() {
     const btnSubmitMirror = section.querySelector("[data-submit-mirror]");
     const textStep = form.querySelectorAll(".text-step");
 
+    searchCity;
+
     var validator = $(`#${formID}`).validate({
       errorPlacement: function (error, element) {
         // si l'élément est de type radio
@@ -150,6 +154,10 @@ export function setupForms() {
         application_mail_address: {
           required: true,
           customEmail: true,
+        },
+        application_habitation_city: {
+          required: true,
+          minlength: 5,
         },
         select: {
           required: true,
