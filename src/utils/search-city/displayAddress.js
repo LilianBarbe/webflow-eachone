@@ -1,4 +1,4 @@
-import { inputHabitationCity } from "$utils/search-city/const.js";
+import { inputHabitationFull } from "$utils/search-city/const.js";
 import { addressList } from "$utils/search-city/const.js";
 import { getAdress } from "$utils/search-city/getAdressWithAPI.js";
 
@@ -11,4 +11,4 @@ const makeAPIsearch = function (event) {
   }
 };
 
-export const searchCity = inputHabitationCity.addEventListener("input", makeAPIsearch);
+export const searchCity = inputHabitationFull.addEventListener("input", makeAPIsearch);

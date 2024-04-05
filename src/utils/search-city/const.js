@@ -1,4 +1,4 @@
-export const inputHabitationCity = document.querySelector("[champ='city']");
+export const inputHabitationFull = document.querySelector("[data-address='full']");
 export const addressList = document.querySelector("[data-address-list]");
 export const inputVille = document.querySelector("[data-empty-ville]");
 export const inputCodePostal = document.querySelector("[data-empty-codepostal]");

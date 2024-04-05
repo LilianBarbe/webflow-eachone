@@ -5,7 +5,7 @@ import { textAddress } from "$utils/search-city/const.js";
 import { parent } from "$utils/search-city/const.js";
 import { addressText } from "$utils/search-city/const.js";
 import { addressPostalText } from "$utils/search-city/const.js";
-import { inputHabitationCity } from "$utils/search-city/const.js";
+import { inputHabitationFull } from "$utils/search-city/const.js";
 import { addressList } from "$utils/search-city/const.js";
 
 export const getAdress = async (search) => {
@@ -44,7 +44,7 @@ export const getAdress = async (search) => {
         inputVille.value = address.city;
         inputCodePostal.value = address.postcode;
         inputNumberStreet.value = address.nom;
-        inputHabitationCity.value = address.label;
+        inputHabitationFull.value = address.label;
         addressList.style.display = "none";
       });
 
