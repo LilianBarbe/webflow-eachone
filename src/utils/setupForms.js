@@ -68,6 +68,15 @@ export function setupForms() {
     "Veuillez fournir un code postal valide."
   );
 
+  // méthode pour interdire les caractères spéciaux
+  jQuery.validator.addMethod(
+    "customPostalAddress",
+    function (value, element) {
+      return this.optional(element) || /^[A-Za-z0-9 -]+$/gm.test(value);
+    },
+    "Veuillez fournir une adresse postale valide"
+  );
+
   // method pour la date
   jQuery.validator.addMethod(
     "customDate",
@@ -168,6 +177,9 @@ export function setupForms() {
         },
         select: {
           required: true,
+        },
+        application_habitation_full_address: {
+          customPostalAddress: true,
         },
         application_habitation_postcode: {
           required: true,
