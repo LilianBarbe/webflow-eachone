@@ -4,7 +4,8 @@
 import { setupAutoComplete } from "$utils/autoCompleteOrganisations.js";
 import { paramsSearch } from "$utils/findParams.ts";
 import { inputsMirror } from "$utils/inputsMirror.js";
-import { searchCity } from "$utils/search-city/displayAddress.js";
+import { findInputHabitationFull } from "$utils/search-city/const.js"; // Assuming getAdress is exported here, corrected below
+import { getAdress } from "$utils/search-city/getAdressWithAPI.js"; // Corrected import
 import { showHiddenInputs } from "$utils/showHiddenFields.ts";
 
 // constuct
@@ -137,7 +138,13 @@ export function setupForms() {
     const btnSubmitMirror = section.querySelector("[data-submit-mirror]");
     const textStep = form.querySelectorAll(".text-step");
 
-    searchCity;
+    const inputHabitationFull = findInputHabitationFull(section);
+    inputHabitationFull.addEventListener("input", function (event) {
+      let address = event.target.value;
+      if (address.length > 3) {
+        getAdress(address, section);
+      }
+    });
 
     var validator = $(`#${formID}`).validate({
       errorPlacement: function (error, element) {
