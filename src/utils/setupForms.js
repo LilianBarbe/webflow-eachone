@@ -179,7 +179,7 @@ export function setupForms() {
           required: true,
         },
         application_habitation_full_address: {
-          customPostalAddress: true,
+          customPostalAddress: false,
         },
         application_habitation_postcode: {
           required: true,
